@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="login-wrapper">
+    <div class="login-card">
+      
+      <!-- Encabezado con Icono y Título -->
+      <div class="logo-box ion-text-center">
+        <div class="icon-circle">
+          <ion-icon name="person-circle-outline"><img src="https://cdn-icons-png.flaticon.com/512/6522/6522581.png" alt=""></ion-icon>
+        </div>
+        <h2 id="subtitulo">Bienvenido</h2>
+      </div>
+
+      <!-- Formulario -->
+      <form>
+        <ion-item fill="outline" class="custom-item ion-margin-bottom">
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email" name="email" required></ion-input>
+        </ion-item>
+
+        <ion-item fill="outline" class="custom-item ion-margin-bottom">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" name="password" required></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" class="submit-btn">
+          Ingresar
+        </ion-button>
+      </form>
+
+      <!-- Acción secundaria / Social -->
+      <div class="footer-actions ion-text-center">
+        <div class="divider">
+          <span>o</span>
+        </div>
+        <button type="button" (click)="loginConGitHub()" class="enlace-github">
+          <i class="fa-brands fa-github"></i>
+          <span>Iniciar sesión con GitHub</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>

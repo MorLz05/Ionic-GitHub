@@ -1,0 +1,149 @@
+// Fondo general con degradado suave
+ion-content {
+  --background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+// Contenedor que centra la tarjeta vertical y horizontalmente
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 1.5rem;
+}
+
+// Tarjeta blanca con bordes redondeados y sombra
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2.2rem 1.8rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+// Círculo decorativo detrás del icono
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: rgba(var(--ion-color-primary-rgb, 56, 128, 255), 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ion-icon {
+    font-size: 48px;
+    color: var(--ion-color-primary, #3880ff);
+  }
+}
+
+// Título y descripción
+#subtitulo {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.login-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 6px 0 24px;
+}
+
+// Estilos de los inputs (<ion-item>)
+.custom-item {
+  --background: #f8fafc;
+  --border-radius: 12px;
+  --border-color: #e2e8f0;
+  --border-width: 1.5px;
+  --highlight-color-focused: var(--ion-color-primary, #3880ff);
+  margin-bottom: 16px;
+
+  ion-label {
+    font-weight: 500;
+    color: #64748b;
+  }
+
+  ion-input {
+    --color: #0f172a;
+    font-size: 0.95rem;
+  }
+}
+
+// Botón de ingreso principal
+.submit-btn {
+  --border-radius: 12px;
+  --box-shadow: 0 8px 16px rgba(var(--ion-color-primary-rgb, 56, 128, 255), 0.3);
+  font-weight: 700;
+  height: 48px;
+  margin-top: 24px;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+// Línea divisoria decorativa
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0 16px;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  span {
+    padding: 0 12px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+  }
+}
+.enlace-github {
+  // 1. Quitar estilos feos nativos del <button>
+  border: 1px solid #e2e8f0;
+  outline: none;
+  cursor: pointer;
+
+  // 2. Alinear icono y texto centrados y separados
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; // Espacio entre el logo de GitHub y el texto
+
+  // 3. Tamaño, forma y colores modernos
+  width: 100%; // O quita el 100% si prefieres que no ocupe todo el ancho
+  max-width: 320px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background-color: #24292f; // Color oficial dark de GitHub (o #f6f8fa si lo quieres claro)
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  
+  // 4. Sombras y transición al pasar el cursor
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease-in-out;
+
+  i {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    background-color: #1b1f23;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  }
+
+  &:active {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+}
