@@ -22,8 +22,14 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/conoceme/Josue/conoceme.page').then(m => m.ConocemePage),
     canActivate: [authGuard] // 🔒 Protegida
   },
+
   {
     path: '**',
     redirectTo: 'login'
   }
+];
+  path: 'josue',
+  loadComponent: () =>
+    import('./pages/conoceme/Josue/conoceme.page').then((m) => m.ConocemePage),
+  },
 ];
