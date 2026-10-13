@@ -1,0 +1,206 @@
+// Variables para el estilo Neomorphism
+$bg-color: #e0e5ec;
+$shadow-dark: #a3b1c6;
+$shadow-light: #ffffff;
+$text-color: #4a5568;
+$text-light: #718096;
+
+.neo-background {
+  --background: #{$bg-color};
+  font-family: 'Roboto', sans-serif;
+}
+
+.neo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 30px 20px;
+}
+
+// Título de la página
+.header-section {
+  margin-bottom: 30px;
+  text-align: center;
+
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: $text-light;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+    animation: fadeInDown 0.6s ease-out;
+  }
+}
+
+// --- Tarjeta de Bienvenida ---
+.neo-card {
+  background: $bg-color;
+  border-radius: 30px;
+  padding: 40px 30px;
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 320px;
+
+  // Sombra Neomorphism Extruida (Saliente)
+  box-shadow:
+    9px 9px 16px $shadow-dark,
+    -9px -9px 16px $shadow-light;
+
+  animation: floatIn 0.8s ease-out;
+
+  .avatar-circle {
+    width: 90px;
+    height: 90px;
+    background: $bg-color;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Sombra interior (Hundida) para el avatar
+    box-shadow:
+      inset 5px 5px 10px $shadow-dark,
+      inset -5px -5px 10px $shadow-light;
+
+    ion-icon {
+      font-size: 45px;
+      color: $text-color;
+    }
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: $text-light;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $text-color;
+    margin: 5px 0 0 0;
+    letter-spacing: 1px;
+  }
+}
+
+// --- Grupo de Botones ---
+.button-group {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+// --- Estilo Base del Botón Neomórfico ---
+.neo-button {
+  background: $bg-color;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; // Alineado a la izquierda para el icono
+  gap: 20px;
+  cursor: pointer;
+  outline: none;
+
+  box-shadow:
+    6px 6px 12px $shadow-dark,
+    -6px -6px 12px $shadow-light;
+
+  transition: all 0.3s ease;
+
+  // Contenedor del icono (círculo hundido)
+  .icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bg-color;
+
+    // Sombra interior sutil para el icono
+    box-shadow:
+      inset 3px 3px 6px $shadow-dark,
+      inset -3px -3px 6px $shadow-light;
+
+    ion-icon {
+      font-size: 22px;
+      color: $text-color;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-color;
+    letter-spacing: 1px;
+  }
+
+  // Efecto al presionar (Active) - Se vuelve hundido
+  &:active {
+    box-shadow:
+      inset 4px 4px 8px $shadow-dark,
+      inset -4px -4px 8px $shadow-light;
+
+    transform: scale(0.98);
+
+    .icon-wrapper {
+      box-shadow:
+        inset 1px 1px 2px $shadow-dark,
+        inset -1px -1px 2px $shadow-light;
+    }
+  }
+
+  // Estilo específico para Logout
+  &.logout-btn {
+    span {
+      color: #e53e3e; // Rojo suave
+    }
+    .icon-wrapper ion-icon {
+      color: #e53e3e;
+    }
+  }
+}
+
+// --- Animaciones ---
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Animación en cascada para los botones
+.neo-button {
+  animation: floatIn 0.8s ease-out backwards;
+
+  &:nth-child(1) { animation-delay: 0.2s; }
+  &:nth-child(2) { animation-delay: 0.4s; }
+}
