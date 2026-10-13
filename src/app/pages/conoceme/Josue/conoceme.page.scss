@@ -1,0 +1,255 @@
+// Variables para el estilo Neomorphism (mismas del menú)
+$bg-color: #e0e5ec;
+$shadow-dark: #a3b1c6;
+$shadow-light: #ffffff;
+$text-color: #4a5568;
+$text-light: #718096;
+
+.neo-background {
+  --background: #{$bg-color};
+  font-family: 'Roboto', sans-serif;
+}
+
+.neo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  padding: 30px 20px 40px;
+  gap: 25px;
+}
+
+// --- Barra superior con botón regresar ---
+.top-bar {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  justify-content: flex-start;
+
+  .back-btn {
+    width: auto;
+    padding: 12px 22px;
+    gap: 12px;
+
+    .icon-wrapper {
+      width: 35px;
+      height: 35px;
+    }
+
+    span {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// --- Tarjeta base ---
+.neo-card {
+  background: $bg-color;
+  border-radius: 25px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow:
+    9px 9px 16px $shadow-dark,
+    -9px -9px 16px $shadow-light;
+  animation: floatIn 0.8s ease-out backwards;
+}
+
+// --- Tarjeta de perfil ---
+.profile-card {
+  text-align: center;
+  animation-delay: 0.1s;
+
+  .avatar-circle {
+    width: 110px;
+    height: 110px;
+    background: $bg-color;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+      inset 6px 6px 12px $shadow-dark,
+      inset -6px -6px 12px $shadow-light;
+
+    ion-icon {
+      font-size: 55px;
+      color: $text-color;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $text-color;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: $text-light;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 6px 0 0 0;
+  }
+}
+
+// --- Tarjeta de datos académicos ---
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation-delay: 0.25s;
+
+  .info-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    .info-icon {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $bg-color;
+      box-shadow:
+        inset 3px 3px 6px $shadow-dark,
+        inset -3px -3px 6px $shadow-light;
+
+      ion-icon {
+        font-size: 24px;
+        color: $text-color;
+      }
+    }
+
+    .info-text {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      .label {
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: $text-light;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .value {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: $text-color;
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+// --- Tarjeta de descripción ---
+.description-card {
+  animation-delay: 0.4s;
+
+  .description-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+
+    ion-icon {
+      font-size: 26px;
+      color: $text-color;
+      padding: 10px;
+      border-radius: 50%;
+      background: $bg-color;
+      box-shadow:
+        inset 3px 3px 6px $shadow-dark,
+        inset -3px -3px 6px $shadow-light;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $text-color;
+      margin: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+
+  .description-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: $text-light;
+    margin: 0;
+    text-align: justify;
+  }
+}
+
+// --- Botón neomórfico reutilizable ---
+.neo-button {
+  background: $bg-color;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  cursor: pointer;
+  outline: none;
+  box-shadow:
+    6px 6px 12px $shadow-dark,
+    -6px -6px 12px $shadow-light;
+  transition: all 0.3s ease;
+
+  .icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bg-color;
+    box-shadow:
+      inset 3px 3px 6px $shadow-dark,
+      inset -3px -3px 6px $shadow-light;
+
+    ion-icon {
+      font-size: 22px;
+      color: $text-color;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-color;
+    letter-spacing: 1px;
+  }
+
+  &:active {
+    box-shadow:
+      inset 4px 4px 8px $shadow-dark,
+      inset -4px -4px 8px $shadow-light;
+    transform: scale(0.98);
+  }
+}
+
+// --- Animaciones ---
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
