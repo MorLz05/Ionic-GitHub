@@ -1,0 +1,68 @@
+<ion-content [fullscreen]="true" class="neo-background">
+  <div class="neo-container">
+
+    <!-- Botón Regresar -->
+    <div class="top-bar">
+      <button class="neo-button back-btn" (click)="regresar()">
+        <div class="icon-wrapper">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </div>
+        <span>Regresar</span>
+      </button>
+    </div>
+
+    <!-- Tarjeta de presentación -->
+    <div class="neo-card profile-card">
+      <div class="avatar-circle">
+        <ion-icon name="person-outline"></ion-icon>
+      </div>
+      <h2>Josué Isaac ML</h2>
+      <p class="subtitle">TSU. DSM</p>
+    </div>
+
+    <!-- Sección de datos académicos -->
+    <div class="neo-card info-card">
+      <div class="info-row">
+        <div class="info-icon">
+          <ion-icon name="school-outline"></ion-icon>
+        </div>
+        <div class="info-text">
+          <span class="label">Grado y Grupo</span>
+          <span class="value">10° "B"</span>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-icon">
+          <ion-icon name="book-outline"></ion-icon>
+        </div>
+        <div class="info-text">
+          <span class="label">Carrera</span>
+          <span class="value">Ing. DyGS</span>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-icon">
+          <ion-icon name="reader-outline"></ion-icon>
+        </div>
+        <div class="info-text">
+          <span class="label">Materia</span>
+          <span class="value">Desarrollo Móvil Integral</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de descripción -->
+    <div class="neo-card description-card">
+      <div class="description-header">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <h3>Descripción</h3>
+      </div>
+      <p class="description-text">
+        Alumno de la UTSelva, cursador del 10 cuatrimestre de la carrera de Ingeniería en Desarrollo y Gestión de Software. Apasionado por la tecnología y el desarrollo de aplicaciones móviles, con habilidades en programación y diseño de interfaces. Siempre en busca de aprender nuevas tecnologías y mejorar mis habilidades en el desarrollo de software.
+      </p>
+    </div>
+
+  </div>
+</ion-content>
