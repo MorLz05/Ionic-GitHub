@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonIcon, IonTitle, IonToolbar, IonItem, IonLabel, IonInput, IonButton} from '@ionic/angular';
+import { IonContent, IonHeader, IonIcon, IonTitle, IonToolbar, IonItem, IonLabel, IonInput, IonButton } from '@ionic/angular/standalone';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   imports: [
-    IonContent, 
-    IonHeader, 
-    IonTitle, 
-    IonToolbar, 
-    CommonModule, 
-    FormsModule, 
-    IonIcon, 
-    IonItem, 
-    IonLabel, 
-    IonInput, 
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    CommonModule,
+    FormsModule,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonInput,
     IonButton,
   ]
 })
@@ -44,7 +45,7 @@ export class LoginPage implements OnInit {
   }
   loginConGitHub(){
     const redirectUri = encodeURIComponent('http://localhost:8100/login');
-    const scope = encodeURIComponent('read:user user:email'); 
+    const scope = encodeURIComponent('read:user user:email');
     // Redirige al usuario al formulario oficial de login de GitHub
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${this.clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
   }
