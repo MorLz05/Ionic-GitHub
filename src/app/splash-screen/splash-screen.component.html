@@ -1,0 +1,9 @@
+<main class="splash-screen" aria-label="AAJDeV">
+  <img class="splash-logo" src="assets/aajdev-logo.png" alt="Logotipo de AAJDeV" />
+  <h1 class="splash-name" aria-label="AAJDeV">
+    @for (letter of letters; track $index) {
+      <span [style.animation-delay.ms]="$index * 120" aria-hidden="true">{{ letter }}</span>
+    }
+  </h1>
+  <div class="splash-loader" aria-hidden="true"><span></span></div>
+</main>
