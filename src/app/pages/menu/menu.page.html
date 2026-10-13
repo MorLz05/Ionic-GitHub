@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true" class="neo-background">
+  <div class="neo-container">
+
+    <!-- Encabezado de la página -->
+    <div class="header-section">
+      <h1 class="page-title">Menú Principal</h1>
+    </div>
+
+    <!-- Tarjeta de Bienvenida (Estilo Neomorphism) -->
+    <div class="neo-card welcome-card">
+      <div class="avatar-circle">
+        <ion-icon name="person-outline"></ion-icon>
+      </div>
+      <h2>BIENVENIDO</h2>
+      <h3>USUARIO</h3>
+    </div>
+
+    <!-- Botones de Acción -->
+    <div class="button-group">
+
+      <!-- Botón Acerca De -->
+      <button class="neo-button" (click)="irAAcercaDe()">
+        <div class="icon-wrapper">
+          <ion-icon name="information-circle-outline"></ion-icon>
+        </div>
+        <span>Acerca de</span>
+      </button>
+
+      <!-- Botón Logout -->
+      <button class="neo-button logout-btn" (click)="cerrarSesion()">
+        <div class="icon-wrapper">
+          <ion-icon name="log-out-outline"></ion-icon>
+        </div>
+        <span>Logout</span>
+      </button>
+
+    </div>
+
+  </div>
+</ion-content>
