@@ -11,13 +11,24 @@
       </button>
     </div>
 
+    <!-- 🔽 TABS de personas -->
+    <div class="tabs-container">
+      <button
+        *ngFor="let p of personas"
+        class="tab-btn"
+        [class.active]="p.slug === personaActual.slug"
+        (click)="cambiarPersona(p.slug)">
+        {{ p.slug }}
+      </button>
+    </div>
+
     <!-- Tarjeta de presentación -->
     <div class="neo-card profile-card">
       <div class="avatar-circle">
         <ion-icon name="person-outline"></ion-icon>
       </div>
-      <h2>Josué Isaac ML</h2>
-      <p class="subtitle">TSU. DSM</p>
+      <h2>{{ personaActual.nombre }}</h2>
+      <p class="subtitle">{{ personaActual.rol }}</p>
     </div>
 
     <!-- Sección de datos académicos -->
@@ -28,7 +39,7 @@
         </div>
         <div class="info-text">
           <span class="label">Grado y Grupo</span>
-          <span class="value">10° "B"</span>
+          <span class="value">{{ personaActual.grado }}</span>
         </div>
       </div>
 
@@ -38,7 +49,7 @@
         </div>
         <div class="info-text">
           <span class="label">Carrera</span>
-          <span class="value">Ing. DyGS</span>
+          <span class="value">{{ personaActual.carrera }}</span>
         </div>
       </div>
 
@@ -48,7 +59,7 @@
         </div>
         <div class="info-text">
           <span class="label">Materia</span>
-          <span class="value">Desarrollo Móvil Integral</span>
+          <span class="value">{{ personaActual.materia }}</span>
         </div>
       </div>
     </div>
@@ -59,9 +70,7 @@
         <ion-icon name="information-circle-outline"></ion-icon>
         <h3>Descripción</h3>
       </div>
-      <p class="description-text">
-        Alumno de la UTSelva, cursador del 10 cuatrimestre de la carrera de Ingeniería en Desarrollo y Gestión de Software. Apasionado por la tecnología y el desarrollo de aplicaciones móviles, con habilidades en programación y diseño de interfaces. Siempre en busca de aprender nuevas tecnologías y mejorar mis habilidades en el desarrollo de software.
-      </p>
+      <p class="description-text">{{ personaActual.descripcion }}</p>
     </div>
 
   </div>

@@ -31,7 +31,7 @@ export class MenuPage implements OnInit {
   }
 
   irAAcercaDe() {
-    this.router.navigate(['/pages/conoceme/Josue']);
+    this.router.navigate(['/pages/conoceme/']);
   }
 
   cerrarSesion() {
