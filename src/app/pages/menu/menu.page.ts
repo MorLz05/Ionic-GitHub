@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { IonContent, IonIcon } from '@ionic/angular';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { personOutline, informationCircleOutline, logOutOutline } from 'ionicons/icons';
 
@@ -24,7 +24,6 @@ export class MenuPage implements OnInit {
   }
 
   ngOnInit() {
-    // Lee el nombre guardado tras iniciar sesión
     const usuarioGuardado = localStorage.getItem('user_name');
     if (usuarioGuardado) {
       this.nombreUsuario = usuarioGuardado;
@@ -32,17 +31,13 @@ export class MenuPage implements OnInit {
   }
 
   irAAcercaDe() {
-    // Ruta hacia tu vista de acerca de / conóceme
     this.router.navigate(['/pages/conoceme/Josue']);
   }
 
   cerrarSesion() {
-    // 1. Limpiar las credenciales y datos de sesión
     localStorage.removeItem('github_code');
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('user_name');
-
-    // 2. Redirigir a login reemplazando el historial
     this.router.navigate(['/login'], { replaceUrl: true });
   }
 }

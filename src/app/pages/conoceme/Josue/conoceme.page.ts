@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonContent, IonIcon } from '@ionic/angular';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import {
   arrowBackOutline,
@@ -32,7 +32,6 @@ export class ConocemePage {
   }
 
   regresar() {
-    // Sin funcionalidad por ahora, solo placeholder
     console.log('Botón regresar presionado');
   }
 }

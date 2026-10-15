@@ -1,6 +1,5 @@
-// src/app/app.routes.ts
 import { Routes } from '@angular/router';
-import { authGuard } from './guards/auth.guard'; // Ajusta la ruta a tu archivo
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -15,21 +14,16 @@ export const routes: Routes = [
   {
     path: 'menu',
     loadComponent: () => import('./pages/menu/menu.page').then(m => m.MenuPage),
-    canActivate: [authGuard] // 🔒 Protegida
+    canActivate: [authGuard]
   },
   {
     path: 'pages/conoceme/Josue',
     loadComponent: () => import('./pages/conoceme/Josue/conoceme.page').then(m => m.ConocemePage),
-    canActivate: [authGuard] // 🔒 Protegida
+    canActivate: [authGuard]
   },
 
   {
     path: '**',
     redirectTo: 'login'
   }
-];
-  path: 'josue',
-  loadComponent: () =>
-    import('./pages/conoceme/Josue/conoceme.page').then((m) => m.ConocemePage),
-  },
 ];
