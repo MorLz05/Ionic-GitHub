@@ -1,10 +1,7 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-  },
   {
     path: '',
     redirectTo: 'login',
@@ -12,15 +9,29 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./login/login/login.page').then( m => m.LoginPage)
+    loadComponent: () =>
+      import('./login/login/login.page').then((m) => m.LoginPage),
   },
   {
     path: 'menu',
-    loadComponent: () => import('./pages/menu/menu.page').then((m) => m.MenuPage),
+    loadComponent: () =>
+      import('./pages/menu/menu.page').then((m) => m.MenuPage),
+    canActivate: [authGuard],
   },
   {
-  path: 'josue',
-  loadComponent: () =>
-    import('./pages/conoceme/Josue/conoceme.page').then((m) => m.ConocemePage),
-},
+    path: 'pages/conoceme',
+    redirectTo: 'pages/conoceme/Josue',
+    pathMatch: 'full',
+  },
+  {
+    path: 'pages/conoceme/:persona',
+    loadComponent: () =>
+      import('./pages/conoceme/conoceme.page').then((m) => m.ConocemePage),
+    canActivate: [authGuard],
+  },
+
+  {
+    path: '**',
+    redirectTo: 'login',
+  },
 ];

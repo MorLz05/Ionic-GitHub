@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { IonContent, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { personOutline, informationCircleOutline, logOutOutline } from 'ionicons/icons';
@@ -11,9 +12,10 @@ import { personOutline, informationCircleOutline, logOutOutline } from 'ionicons
   standalone: true,
   imports: [CommonModule, IonContent, IonIcon]
 })
-export class MenuPage {
+export class MenuPage implements OnInit {
+  nombreUsuario: string = 'USUARIO';
 
-  constructor() {
+  constructor(private router: Router) {
     addIcons({
       'person-outline': personOutline,
       'information-circle-outline': informationCircleOutline,
@@ -21,11 +23,21 @@ export class MenuPage {
     });
   }
 
+  ngOnInit() {
+    const usuarioGuardado = localStorage.getItem('user_name');
+    if (usuarioGuardado) {
+      this.nombreUsuario = usuarioGuardado;
+    }
+  }
+
   irAAcercaDe() {
-    console.log('Boton Acerca de presionado');
+    this.router.navigate(['/pages/conoceme/']);
   }
 
   cerrarSesion() {
-    console.log('Boton Logout presionado');
+    localStorage.removeItem('github_code');
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('user_name');
+    this.router.navigate(['/login'], { replaceUrl: true });
   }
 }
