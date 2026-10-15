@@ -1,6 +1,5 @@
-// src/app/app.routes.ts
 import { Routes } from '@angular/router';
-import { authGuard } from './guards/auth.guard'; // Ajusta la ruta a tu archivo
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -10,26 +9,29 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./login/login/login.page').then(m => m.LoginPage),
+    loadComponent: () =>
+      import('./login/login/login.page').then((m) => m.LoginPage),
   },
   {
     path: 'menu',
-    loadComponent: () => import('./pages/menu/menu.page').then(m => m.MenuPage),
-    canActivate: [authGuard] // 🔒 Protegida
+    loadComponent: () =>
+      import('./pages/menu/menu.page').then((m) => m.MenuPage),
+    canActivate: [authGuard],
   },
   {
-    path: 'pages/conoceme/Josue',
-    loadComponent: () => import('./pages/conoceme/Josue/conoceme.page').then(m => m.ConocemePage),
-    canActivate: [authGuard] // 🔒 Protegida
+    path: 'pages/conoceme',
+    redirectTo: 'pages/conoceme/Josue',
+    pathMatch: 'full',
+  },
+  {
+    path: 'pages/conoceme/:persona',
+    loadComponent: () =>
+      import('./pages/conoceme/conoceme.page').then((m) => m.ConocemePage),
+    canActivate: [authGuard],
   },
 
   {
     path: '**',
-    redirectTo: 'login'
-  }
-];
-  path: 'josue',
-  loadComponent: () =>
-    import('./pages/conoceme/Josue/conoceme.page').then((m) => m.ConocemePage),
+    redirectTo: 'login',
   },
 ];
