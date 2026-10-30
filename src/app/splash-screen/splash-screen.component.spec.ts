@@ -12,7 +12,7 @@ describe('SplashScreenComponent', () => {
     fixture.componentInstance.finished.subscribe(() => (finished = true));
     fixture.detectChanges();
 
-    tick(4999);
+    tick(1999);
     expect(finished).toBeFalse();
 
     tick(1);
